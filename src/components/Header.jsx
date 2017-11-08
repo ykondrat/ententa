@@ -5,9 +5,9 @@ import './style/Header.less';
 export default createReactClass({
     render() {
         return (
-          <nav className="navbar navbar-expand-md navbar-light fixed-top ">
+          <nav className="navbar navbar-expand-md navbar-light fixed-top" >
             <div className="container">
-              <button className="navbar-brand btn">ententa</button>
+              <img src="./images/logoententa.png" alt="ententa log" className="img-fluid ententa-logo"/>
               <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
               </button>
@@ -15,19 +15,19 @@ export default createReactClass({
                 <ul className="navbar-nav mr-auto"></ul>
                 <ul className="navbar-nav">
                   <li className="nav-item">
-                    <span className="nav-span">головна</span>
+                    <a className="nav-span" href="#content-main">головна</a>
                   </li>
                   <li className="nav-item">
-                    <span className="nav-span">про нас</span>
+                    <a className="nav-span" href="#content-about">про нас</a>
                   </li>
                   <li className="nav-item">
-                    <span className="nav-span">команда</span>
+                    <a className="nav-span" href="#content-team">команда</a>
                   </li>
                   <li className="nav-item">
-                    <span className="nav-span">послуги</span>
+                    <a className="nav-span" href="#content-video">послуги</a>
                   </li>
                   <li className="nav-item">
-                    <span className="nav-span">контакти</span>
+                    <a className="nav-span" href="#content-video">контакти</a>
                   </li>
                 </ul>
               </div>
