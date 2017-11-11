@@ -3,7 +3,39 @@ import createReactClass from 'create-react-class';
 import './style/Main.less';
 
 export default createReactClass({
-  render(){
+    getInitialState(){
+        return ({
+            name: '',
+            email: '',
+            phone: '',
+            msg: ''
+        });
+    },
+    handleName(event){
+        this.setState({  name: event.target.value });
+    },
+    handleEmail(event){
+        this.setState({  email: event.target.value });
+    },
+    handlePhone(event){
+        this.setState({  phone: event.target.value });
+    },
+    handleMSG(event){
+        this.setState({  msg: event.target.value });
+    },
+    handleForm(event){
+        $.ajax({
+            url: 'http://localhost:8080/ententa/set',
+            type: 'post',
+            dataType: 'json'
+            data: this.state,
+            success: function(response) {
+                console.log(response);
+            }
+        })
+        //console.log(this.state);
+    },
+    render(){
     return (
         <div className="main-block" id="content-main">
             <div className="container">
@@ -21,32 +53,32 @@ export default createReactClass({
                         </button>
                         <div className="modal-body">
                             <div className="form-group row">
-                                <label htmlFor="example-text-input" className="col-3 col-form-label"><span className="red-star"><sup>*</sup></span> П.І.Б</label>
+                                <label htmlFor="user-name" className="col-3 col-form-label"><span className="red-star"><sup>*</sup></span> П.І.Б</label>
                                 <div className="col-9">
-                                    <input className="form-control" type="text"/>
+                                    <input id="user-name" className="form-control" onChange={this.handleName} value={this.state.name} type="text"/>
                                 </div>
                             </div>
                             <div className="form-group row">
-                                <label htmlFor="example-text-input" className="col-3 col-form-label"><span className="red-star"><sup>*</sup></span> Електронна пошта</label>
+                                <label htmlFor="user-email" className="col-3 col-form-label"><span className="red-star"><sup>*</sup></span> Електронна пошта</label>
                             <div className="col-9">
-                                    <input className="form-control" type="text"/>
+                                    <input id="user-email" className="form-control" onChange={this.handleEmail} value={this.state.email} type="text"/>
                                 </div>
                             </div>
                             <div className="form-group row">
-                                <label htmlFor="example-text-input" className="col-3 col-form-label"><span className="red-star"><sup>*</sup></span> Номер телефону</label>
+                                <label htmlFor="user-phone" className="col-3 col-form-label"><span className="red-star"><sup>*</sup></span> Номер телефону</label>
                             <div className="col-9">
-                                    <input className="form-control" type="text"/>
+                                    <input id="user-phone"  className="form-control" onChange={this.handlePhone} value={this.state.phone} type="text"/>
                                 </div>
                             </div>
                             <div className="form-group row">
-                                <label htmlFor="example-text-input" className="col-3 col-form-label"><span className="red-star"><sup>*</sup></span> Повідомлення</label>
+                                <label htmlFor="user-msg" className="col-3 col-form-label"><span className="red-star"><sup>*</sup></span> Повідомлення</label>
                             <div className="col-9">
-                                    <textarea className="form-control" type="text"></textarea>
+                                    <textarea id="user-msg" className="form-control" type="text" onChange={this.handleMSG} value={this.state.msg}></textarea>
                                 </div>
                             </div>
                         </div>
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-outline-success">Відправити</button>
+                            <button type="button" className="btn btn-outline-success" onClick={this.handleForm}>Відправити</button>
                         </div>
                     </div>
                 </div>

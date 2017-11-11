@@ -5,6 +5,10 @@ import Header from './Header.jsx';
 import Main from './Main.jsx';
 import Objects from './Objects.jsx';
 import Team from './Team.jsx';
+import Services from './Services.jsx';
+import Contact from './Contact.jsx';
+import Footer from './Footer.jsx';
+
 
 export default createReactClass({
     componentDidMount(){
@@ -29,6 +33,9 @@ export default createReactClass({
                 <Main />
                 <Objects />
                 <Team />
+                <Services />
+                <Contact />
+                <Footer />
             </div>
         );
     },

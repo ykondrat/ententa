@@ -9,7 +9,7 @@ export default createReactClass({
                 <div className="container">
                     <div className="row">
                         <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 team-cont">
-                            <img src="images/Abraham.jpg" className="img-fluid" alt=""/>
+                            <img src="public/images/Abraham.jpg" className="img-fluid" alt=""/>
                             <div className="info">
                                 <h3 style={{ marginTop: '15px' }}>Name</h3>
                                 <h3>Surname</h3>
@@ -18,7 +18,7 @@ export default createReactClass({
                             </div>
                         </div>
                         <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 team-cont">
-                            <img src="images/Abraham.jpg" className="img-fluid" alt=""/>
+                            <img src="public/images/Abraham.jpg" className="img-fluid" alt=""/>
                             <div className="info">
                                 <h3 style={{ marginTop: '15px' }}>Name</h3>
                                 <h3>Surname</h3>
@@ -27,7 +27,7 @@ export default createReactClass({
                             </div>
                         </div>
                         <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 team-cont">
-                            <img src="images/Abraham.jpg" className="img-fluid" alt=""/>
+                            <img src="public/images/Abraham.jpg" className="img-fluid" alt=""/>
                             <div className="info">
                                 <h3 style={{ marginTop: '15px' }}>Name</h3>
                                 <h3>Surname</h3>

@@ -7,7 +7,7 @@ export default createReactClass({
         return (
           <nav className="navbar navbar-expand-md navbar-light fixed-top" >
             <div className="container">
-              <img src="./images/logoententa.png" alt="ententa log" className="img-fluid ententa-logo"/>
+              <img src="public/images/logoententa.png" alt="ententa log" className="img-fluid ententa-logo"/>
               <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
               </button>
@@ -24,10 +24,10 @@ export default createReactClass({
                     <a className="nav-span" href="#content-team">команда</a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-span" href="#content-video">послуги</a>
+                    <a className="nav-span" href="#content-services">послуги</a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-span" href="#content-video">контакти</a>
+                    <a className="nav-span" href="#content-contact">контакти</a>
                   </li>
                 </ul>
               </div>
