@@ -1,67 +1,54 @@
 <?php
     class DataBase {
         public static function getConnection() {
-            $paramsPath = ROOT.'/config/dataBaseConnection.php';
-            $params = include($paramsPath);
+            $params_path = ROOT.'/configuration/dataBaseConnection.php';
+            $params = include($params_path);
 
+            $dsn = "mysql:host={$params['host']};dbname={$params['dbname']}";
             try {
-                $pdo = new PDO('mysql:host=localhost;dbname=', $params['user'], $params['password']);
-                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            } catch (PDOException $e) {
-                echo "Connection error";//. $e->getMessage();
-                exit();
-            }
-
-            $pdo->query('CREATE DATABASE IF NOT EXISTS ententa');
-
-            try {
-                $pdo = new PDO("mysql:host={$params['host']};dbname={$params['dbname']}", $params['user'], $params['password']);
-            } catch (PDOException $e) {
-                echo "Connection error"; //. $e->getMessage();
-                exit();
-            }
-            return $pdo;
-        }
-
-        public static function createTable($type) {
-            $queryPath = ROOT.'/config/querySQL.php';
-            $query = include($queryPath);
-
-            try {
-                $pdo = DataBase::getConnection();
-                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            } catch (PDOException $e) {
-                echo "Connection error :";//. $e->getMessage();
-                exit();
-            }
-            $id = 'create'.ucfirst($type);
-            $queryCreate = $query[$id];
-            try {
-                $pdo->query($queryCreate);
-            } catch (PDOException $e) {
-                echo "Error: Can't CREATE TABLE - ";//.$e->getMessage();
-                exit();
-            }
-        }
-
-        public function updateTable($type) {
-            $queryPath = ROOT.'/config/querySQL.php';
-            $query = include($queryPath);
-
-            try {
-                $pdo = $this->getConnection();
-                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $pdo = new PDO($dsn, $params['user'], $params['password']);
             } catch (PDOException $e) {
                 echo "Connection error :". $e->getMessage();
                 exit();
             }
-            $id = 'update'.ucfirst($type);
-            $queryUpdate = $query[$id];
+
+            return ($pdo);
+        }
+
+        public static function createDataBase() {
+            $params_path = ROOT.'/configuration/dataBaseConnection.php';
+            $params = include($params_path);
+
+            $dsn = "mysql:host={$params['host']};dbname=";
             try {
-                $pdo->query($queryUpdate);
+                $pdo = new PDO($dsn, $params['user'], $params['password']);
             } catch (PDOException $e) {
-                echo "Error: Can't UPDATE TABLE - ".$e->getMessage();
+                echo "Connection error :" . $e->getMessage();
                 exit();
             }
+
+            $query = "CREATE DATABASE IF NOT EXISTS {$params['dbname']}";
+
+            try {
+                $pdo->query($query);
+            } catch (PDOException $e) {
+                echo "Error: Can't CREATE DataBase - " . $e->getMessage();
+                exit();
+            }
+        }
+
+        public static function createTables() {
+            $pdo = self::getConnection();
+            $query_path = ROOT.'/configuration/queries.php';
+            $queries = include($query_path);
+
+            try {
+                $query = $pdo->prepare($queries['createUsers']);
+                $query->execute();
+            } catch (PDOException $e) {
+                echo "Error: CAN'T CREATE TABLE - user" . $e->getMessage();
+                exit();
+            }
+
         }
     }

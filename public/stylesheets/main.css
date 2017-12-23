@@ -1,0 +1,277 @@
+html, .wrapper, .navbar, .main-block {
+    width: 100%;
+}
+* {
+    font-family: Arial;
+}
+.main-block {
+    height: 100vh;
+    background-image: url("http://ichef.bbci.co.uk/wwfeatures/wm/live/1280_640/images/live/p0/2n/39/p02n39mf.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.red-star {
+    color: red;
+}
+.center-div {
+    text-align: center;
+    position: relative;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: rgba(255, 255, 255, .35);
+    top: 40vh;
+    transform: translatey(-50%);
+}
+.center-div button {
+    position: absolute;
+    margin-top: 50px;
+    margin-left: -15%;
+    border: none;
+    outline: none;
+    padding: 6px 16px 8px 16px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: white;
+    color: #013455;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.tagline {
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 2px 2px #013455;
+}
+.btn-ententa {
+    border: 2px solid #013455;
+    color: #013455;
+    background-color: white;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: .3s;
+}
+.btn-ententa:hover {
+    color: white;
+    background-color: #013455;
+}
+.modal-dialog {
+    max-width: 700px;
+}
+.modal-dialog .close {
+    text-align: right;
+}
+.modal-dialog .close:focus {
+    outline: none;
+}
+.modal-dialog .close span {
+    cursor: pointer;
+    margin-right: 12px;
+    margin-top: 10px;
+}
+.text-counter {
+    float: right;
+    font-size: 12px;
+    color: #A9A8A8;
+}
+.error {
+    font-size: 14px;
+    color: #FF5858;
+    font-family: Arial;
+}
+.success {
+    font-size: 14px;
+    color: #4BD85E;
+    font-family: Arial;
+}
+/*HEADR NAVBAR*/
+.navbar {
+    padding: .8rem 1rem;
+    background-color: white;
+}
+.navbar a {
+    text-decoration: none;
+}
+.ententa-logo {
+    width: 180px;
+}
+.navbar-toggler {
+    border: none;
+    cursor: pointer;
+}
+.navbar-toggler:focus {
+    outline: none;
+}
+.nav-span {
+    color: #013455;
+    margin-right: 15px;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+    -webkit-transition:0.5s;
+    transition: 0.5s;
+}
+.nav-span:hover {
+    color: #005e9b;
+}
+.navbar-collapse.collapse.show .nav-item {
+  margin-top: 15px;
+}
+
+/*OBJECTS*/
+.objects-block {
+    margin-top: 100px;
+    padding-bottom: 50px;
+}
+.objects-block .row {
+    text-align: center;
+}
+.objects-block .row .info {
+    text-align: left;
+    margin-top: 10px;
+    background-color: #90a4bb;
+    color: white;
+    padding: 15px 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/*TEAM*/
+.team-block {
+    margin-top: 100px;
+    padding-bottom: 50px;
+}
+.team-block .row {
+    text-align: center;
+}
+.team-cont {
+    margin-left: auto;
+    margin-right: auto;
+}
+.team-block .row .info {
+
+    text-align: left;
+    margin-top: 10px;
+    color: #012943;
+    padding: 15px 20px;
+}
+.team-block .row .info h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*SERVICES*/
+.services-cont {
+    margin-left: 7px;
+    margin-right: 7px;
+}
+.services-block {
+    margin-top: 100px;
+    padding-bottom: 50px;
+}
+.services-block .row {
+    text-align: center;
+}
+.services-block .row .header-services {
+    padding: 15px 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: #90a4bb;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.services-block .row .info-services {
+    font-size: 18px;
+    text-align: left;
+    padding: 15px 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: #90a4bb;
+    color: white;
+}
+
+/*CONTACTS*/
+.contact-block {
+    margin-top: 100px;
+}
+.contact-block .row {
+    text-align: center;
+}
+.contact-block .row .col-12 h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #012943;
+    margin-bottom: 30px;
+}
+.contact-block .row .col-12 h4 {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #012943;
+}
+.contact-block #map {
+    margin-top: 50px;
+    height: 200px;
+    width: 100%;
+}
+
+/*FOOTER*/
+.footer-block {
+    padding: 10px 20px;
+    background-color: #012943;
+    color: white;
+}
+.footer-block p {
+    padding-top: 5px;
+}
+.footer-block .logo-link {
+    text-align: right;
+}
+.footer-block .logo-link i {
+    margin-right: 10px;
+}
+.fa {
+    cursor: pointer;
+    color: white;
+}
+.fa:hover {
+    color: white;
+    text-decoration: none;
+}
+/*SLICK*/
+.slick-prev:before, .slick-next:before {
+    color: #90a4bb;
+}
+.slick-prev:hover, .slick-next:hover {
+    color: #012943;
+}
+
+/*MEDIA*/
+li {
+    transition: .3s;
+}
+@media (max-width: 991px) {
+    .nav-span {
+        font-size: 15px;
+    }
+    .center-div {
+        width: 80%;
+    }
+}
+@media (max-width: 767px) {
+    .center-div {
+        width: 90%;
+    }
+    .tagline {
+        font-size: 28px;
+    }
+}

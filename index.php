@@ -1,15 +1,14 @@
 <?php
-    session_start();
+    error_reporting(E_ALL);
+    ini_set('display_errors','on');
 
-    define('ROOT', dirname(__FILE__));
-    require_once(ROOT.'/components/Router.class.php');
-    require_once(ROOT.'/components/DataBase.class.php');
-    
-    if (!isset($_SESSION['logged_user'])) {
-        $_SESSION['logged_user'] = "";
-    }
+    define('ROOT', getcwd());
+    require_once (ROOT.'/components/Router.class.php');
+    require_once (ROOT.'/components/Session.class.php');
+    require_once (ROOT.'/components/DataBase.class.php');
 
-    DataBase::createTable('users');
+    DataBase::createDataBase();
+    DataBase::createTables();
 
     $router = new Router();
     $router->runRouter();
